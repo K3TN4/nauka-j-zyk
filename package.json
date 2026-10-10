@@ -1,0 +1,11 @@
+{
+  "name": "nauka-slowek-ru",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nauka 900 najczęstszych słówek rosyjskich w przeglądarce (8 zestawów, localStorage).",
+  "scripts": {
+    "test": "node --test tests/logic.test.js tests/data.test.js",
+    "build-data": "python3 tools/build_data.py"
+  },
+  "license": "UNLICENSED"
+}

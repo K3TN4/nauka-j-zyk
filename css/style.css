@@ -1,0 +1,81 @@
+:root {
+  --tekst: #1a1a1a;
+  --tlo: #fafafa;
+  --karta: #ffffff;
+  --obwodka: #bbbbbb;
+  --akcent: #1f4e8c;
+  --dobry: #1d6b2f;
+  --zly: #a11d1d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--tekst);
+  background: var(--tlo);
+  line-height: 1.4;
+}
+
+#app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 { font-size: 1.5rem; margin: 0.5rem 0 1rem; }
+h2 { font-size: 1.2rem; margin: 0.5rem 0; }
+
+button, select, input[type="text"], input[type="number"] {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--tekst);
+  border-radius: 6px;
+  background: var(--karta);
+  color: var(--tekst);
+}
+
+button { cursor: pointer; min-height: 44px; }
+button.glowny { background: var(--akcent); color: #fff; border-color: var(--akcent); }
+button.ostrzezenie { border-color: var(--zly); color: var(--zly); }
+button:disabled { opacity: 0.5; cursor: default; }
+
+.karta {
+  background: var(--karta);
+  border: 1px solid var(--obwodka);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.statystyki { font-size: 0.92rem; color: #333; margin: 0.25rem 0; }
+.pasek { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+
+.tabela { width: 100%; border-collapse: collapse; margin: 8px 0; }
+.tabela th, .tabela td {
+  border-bottom: 1px solid var(--obwodka);
+  padding: 6px 4px;
+  text-align: left;
+  vertical-align: middle;
+}
+.tabela th { font-size: 0.85rem; color: #444; }
+.tabela input[type="text"] { width: 100%; min-width: 120px; }
+
+.wynik-ok { color: var(--dobry); font-weight: 600; }
+.wynik-zle { color: var(--zly); font-weight: 600; }
+.wiersz-ok td { background: #e6f4e9; }
+.wiersz-zle td { background: #f9e4e4; }
+
+.komunikat { padding: 8px 10px; border-radius: 6px; background: #fff3cd; border: 1px solid #d6b656; margin: 8px 0; }
+
+fieldset { border: 1px solid var(--obwodka); border-radius: 8px; padding: 8px 12px; margin: 8px 0; }
+label.opcja { display: flex; align-items: center; gap: 8px; min-height: 36px; }
+
+.ladowanie { color: #555; }
+
+@media (max-width: 520px) {
+  .tabela .kol-wynik { display: none; }
+  .tabela input[type="text"] { min-width: 90px; }
+}
